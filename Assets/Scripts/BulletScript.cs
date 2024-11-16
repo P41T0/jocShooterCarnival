@@ -10,7 +10,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        speed = 25f;
+        speed = 15f;
         rb.velocity = Vector3.forward * speed;
     }
 
