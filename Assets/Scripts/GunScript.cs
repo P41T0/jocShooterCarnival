@@ -22,11 +22,13 @@ public class GunScript : MonoBehaviour
         {
             delayTime -= Time.deltaTime;
         }
-        else
+        if (delayTime < 0) 
         {
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Instantiate(bullet, BulletSpawner.transform.position, hand.transform.rotation);
+                delayTime = 0.3f;
             }
         }
 
