@@ -10145,27 +10145,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1570749105149852684, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.953717
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1570749105149852684, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.30070576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570749105149852684, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000018626451
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570749105149852684, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.656613e-10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570749105149852684, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570749105149852684, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 2.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570749105149852684, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -10202,38 +10202,6 @@ PrefabInstance:
     - target: {fileID: 7301743937850909177, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
       propertyPath: m_Name
       value: SM_Wep_Revolver_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: singleHandOnly
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: onSqueeze.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: onSqueeze.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: onSqueeze.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3528343633473578441}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: onSqueeze.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: onSqueeze.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Shoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: onSqueeze.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GunScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087514680935342414, guid: 6a51b653642b7464197d3c30ba1b4d00, type: 3}
-      propertyPath: onSqueeze.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
