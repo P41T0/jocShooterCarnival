@@ -11,12 +11,15 @@ public class BulletScript : MonoBehaviour
     private float timeSpawn;
     void Start()
     {
+
+    }
+    public void SetBulletRotationDir(Vector3 forwardDir)
+    {
         rb = GetComponent<Rigidbody>();
         speed = 15f;
-        rb.velocity = Vector3.forward * speed;
         timeSpawn = 5.0f;
+        rb.velocity = forwardDir * speed;
     }
-
     // Update is called once per frame
     void Update()
     {

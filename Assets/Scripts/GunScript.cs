@@ -7,7 +7,6 @@ public class GunScript : MonoBehaviour
 {
     [SerializeField] private GameObject BulletSpawner;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private GameObject hand;
     private float delayTime;
     // Start is called before the first frame update
     void Start()
@@ -22,15 +21,16 @@ public class GunScript : MonoBehaviour
         {
             delayTime -= Time.deltaTime;
         }
-        if (delayTime < 0) 
+        
+
+    }
+    public void Shoot()
+    {
+        if (delayTime < 0)
         {
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Instantiate(bullet, BulletSpawner.transform.position, hand.transform.rotation);
-                delayTime = 0.3f;
-            }
+            GameObject bulletInstantiated = Instantiate(bullet, BulletSpawner.transform.position, gameObject.transform.rotation);
+            delayTime = 0.3f;
+            bulletInstantiated.GetComponent<BulletScript>().SetBulletRotationDir(gameObject.transform.forward);
         }
-
     }
 }
