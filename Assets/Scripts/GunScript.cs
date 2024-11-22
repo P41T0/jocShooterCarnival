@@ -7,6 +7,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] private GameObject BulletSpawner;
     [SerializeField] private GameObject bullet;
     [SerializeField] private AudioClip gunSound;
+    [SerializeField] private GameObject gunSpawnPoint;
     private AudioSource gunSource;
     private float delayTime;
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class GunScript : MonoBehaviour
     {
         gunSource = GetComponent<AudioSource>();
         delayTime = 0;
+        gameObject.transform.position = gunSpawnPoint.transform.position;
         
     }
 
@@ -37,6 +39,14 @@ public class GunScript : MonoBehaviour
             GameObject bulletInstantiated = Instantiate(bullet, BulletSpawner.transform.position, Quaternion.identity);
             delayTime = 0.4f;
             bulletInstantiated.GetComponent<BulletScript>().SetBulletRotationDir(gameObject.transform.forward);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("GunDetector"))
+        {
+            gameObject.transform.position = gunSpawnPoint.transform.position;
         }
     }
 }
