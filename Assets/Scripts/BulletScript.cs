@@ -9,9 +9,10 @@ public class BulletScript : MonoBehaviour
     private float speed;
     private Rigidbody rb;
     private float timeSpawn;
+    SCScript sCScript;
     void Start()
     {
-
+        sCScript = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SCScript>();
     }
     public void SetBulletRotationDir(Vector3 forwardDir)
     {
@@ -23,14 +24,18 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         timeSpawn -= Time.deltaTime;
         if (timeSpawn < 0)
         {
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("colisio");
-    }
+        if (other.CompareTag("Enemy"))
+        {
+            sCScript.IncreaseScore();
+        }
+    }   
 }
