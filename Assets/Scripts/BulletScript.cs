@@ -31,11 +31,15 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
             sCScript.IncreaseScore();
+        }
+        if (!other.CompareTag("BulletCanPass"))
+        {
+            Destroy(gameObject);
         }
     }   
 }

@@ -8,6 +8,7 @@ TagManager:
   - GunDetector
   - Bullet
   - SceneManager
+  - BulletCanPass
   layers:
   - Default
   - TransparentFX
