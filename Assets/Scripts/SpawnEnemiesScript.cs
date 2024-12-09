@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] movingPrefabs; // Prefabs que se mueven
-    public GameObject[] staticPrefabs; // Prefabs que no se mueven
-    public Transform[] movingSpawnPoints; // Puntos de spawn para prefabs móviles
-    public Transform[] staticSpawnPoints; // Puntos de spawn para prefabs estáticos
-    public float movingSpawnInterval = 3f; // Intervalo para spawns de objetos móviles
-    public float staticSpawnInterval = 5f; // Intervalo para spawns de objetos estáticos
-    public float prefabLifetime = 10f; // Tiempo de vida de los prefabs en segundos
+    public GameObject[] movingPrefabs; 
+    public GameObject[] staticPrefabs; 
+    public Transform[] movingSpawnPoints; 
+    public Transform[] staticSpawnPoints; 
+    public float movingSpawnInterval = 3f; 
+    public float staticSpawnInterval = 5f;
+    public float CartSpawnInterval = 20f;
+    public float StaticprefabLifetime = 10f;
+    public float MovprefabLifetime = 20f;
 
-    private int lastMovingSpawnIndex = -1; // Último índice de spawn móvil utilizado
-    private int lastStaticSpawnIndex = -1; // Último índice de spawn estático utilizado
+    private int lastMovingSpawnIndex = -1; 
+    private int lastStaticSpawnIndex = -1; 
 
     private void Start()
     {
-        // Invocar funciones para spawnear cada tipo de prefab
         InvokeRepeating("SpawnMovingPrefab", 0f, movingSpawnInterval);
         InvokeRepeating("SpawnStaticPrefab", 0f, staticSpawnInterval);
+        InvokeRepeating("SpawnCart", 0f, CartSpawnInterval);
     }
 
     void SpawnMovingPrefab()
@@ -30,14 +32,13 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        // Escoger un punto de spawn móvil aleatorio que no sea el mismo que el último
+   
         int randomSpawnIndex;
         do
         {
-            randomSpawnIndex = Random.Range(0, movingSpawnPoints.Length);
+            randomSpawnIndex = Random.Range(0, movingSpawnPoints.Length-1);
         } while (randomSpawnIndex == lastMovingSpawnIndex);
 
-        // Verificar si el punto de spawn está ocupado
         Transform spawnPoint = movingSpawnPoints[randomSpawnIndex];
         if (spawnPoint.childCount > 0)
         {
@@ -45,17 +46,18 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        // Actualizar el último índice de spawn utilizado
+
         lastMovingSpawnIndex = randomSpawnIndex;
 
-        // Escoger un prefab móvil aleatorio
-        int randomPrefabIndex = Random.Range(0, movingPrefabs.Length);
-        GameObject prefabToSpawn = movingPrefabs[randomPrefabIndex];
+        GameObject spawnedPrefab = Instantiate(movingPrefabs[0], spawnPoint.position, spawnPoint.rotation);
+        spawnedPrefab.transform.parent = spawnPoint; 
+        Destroy(spawnedPrefab, MovprefabLifetime);
+    }
 
-        // Generar el prefab
-        GameObject spawnedPrefab = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
-        spawnedPrefab.transform.parent = spawnPoint; // Asignar el prefab como hijo del spawn point
-        Destroy(spawnedPrefab, prefabLifetime);
+    void SpawnCart() {
+        GameObject spawnedPrefab = Instantiate(movingPrefabs[1], movingSpawnPoints[2].position, movingSpawnPoints[2].rotation);
+        spawnedPrefab.transform.parent = movingSpawnPoints[2];
+        Destroy(spawnedPrefab, MovprefabLifetime);
     }
 
     void SpawnStaticPrefab()
@@ -66,14 +68,12 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        // Escoger un punto de spawn estático aleatorio que no sea el mismo que el último
         int randomSpawnIndex;
         do
         {
             randomSpawnIndex = Random.Range(0, staticSpawnPoints.Length);
         } while (randomSpawnIndex == lastStaticSpawnIndex);
 
-        // Verificar si el punto de spawn está ocupado
         Transform spawnPoint = staticSpawnPoints[randomSpawnIndex];
         if (spawnPoint.childCount > 0)
         {
@@ -81,17 +81,14 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        // Actualizar el último índice de spawn utilizado
         lastStaticSpawnIndex = randomSpawnIndex;
 
-        // Escoger un prefab estático aleatorio
         int randomPrefabIndex = Random.Range(0, staticPrefabs.Length);
         GameObject prefabToSpawn = staticPrefabs[randomPrefabIndex];
 
-        // Generar el prefab
         GameObject spawnedPrefab = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
-        spawnedPrefab.transform.parent = spawnPoint; // Asignar el prefab como hijo del spawn point
-        Destroy(spawnedPrefab, prefabLifetime);
+        spawnedPrefab.transform.parent = spawnPoint; 
+        Destroy(spawnedPrefab, StaticprefabLifetime);
     }
 }
 
