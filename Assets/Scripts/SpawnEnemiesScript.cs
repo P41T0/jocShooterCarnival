@@ -46,7 +46,6 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-
         lastMovingSpawnIndex = randomSpawnIndex;
 
         GameObject spawnedPrefab = Instantiate(movingPrefabs[0], spawnPoint.position, spawnPoint.rotation);
