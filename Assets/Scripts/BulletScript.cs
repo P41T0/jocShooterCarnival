@@ -36,7 +36,7 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (collision.gameObject.GetComponent<enemyScript>().isDead == false)
+            if (collision.gameObject.GetComponent<enemyScript>().GetIsDead() == false)
             {
                 sCScript.IncreaseScore();
                 collision.gameObject.GetComponent<enemyScript>().EnemyDead();
