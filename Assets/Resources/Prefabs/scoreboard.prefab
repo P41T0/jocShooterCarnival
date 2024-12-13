@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6776766749254290175}
   - component: {fileID: 5845113704035027971}
   m_Layer: 0
-  m_Name: Text (TMP) (4)
+  m_Name: recordEnemiesShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 1595130527401499136}
   - component: {fileID: 7318847533009004949}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: ' enemiesShot'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 2044289388098951596}
   - component: {fileID: 7453705514025850479}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: numenemiesshoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 1754964650981720185}
   - component: {fileID: 5269887083750768823}
   m_Layer: 0
-  m_Name: Text (TMP) (2)
+  m_Name: timeremaining
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 2250682754009185653}
   - component: {fileID: 4241673437307015930}
   m_Layer: 0
-  m_Name: Text (TMP) (5)
+  m_Name: NumRecordShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 5909681554777657680}
   - component: {fileID: 5987804469549152569}
   m_Layer: 0
-  m_Name: Text (TMP) (3)
+  m_Name: numTimeRemaining
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
