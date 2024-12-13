@@ -36,9 +36,12 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            sCScript.IncreaseScore();
-            collision.gameObject.GetComponent<enemyScript>().EnemyDead();
-            Destroy(gameObject);
+            if (collision.gameObject.GetComponent<enemyScript>().isDead == false)
+            {
+                sCScript.IncreaseScore();
+                collision.gameObject.GetComponent<enemyScript>().EnemyDead();
+                Destroy(gameObject);
+            }
         }
     } 
 }
