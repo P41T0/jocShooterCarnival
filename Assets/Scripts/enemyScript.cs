@@ -13,14 +13,10 @@ public class enemyScript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void EnemyDead()
     {
-        
-        if (collision.CompareTag("Bullet") && !isDead)
-        {
-            isDead = true; 
-            animator.SetBool("dead", true);
-            Destroy(gameObject, 2f);
-        }
+        isDead = true;
+        animator.SetBool("dead", true);
+        Destroy(gameObject, 2f);
     }
 }
