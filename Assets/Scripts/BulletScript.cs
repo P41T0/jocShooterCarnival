@@ -6,18 +6,17 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float speed;
+    private float speed;
     private Rigidbody rb;
-    [SerializeField] private float timeSpawn;
+    private float timeSpawn;
     SCScript sCScript;
     void Start()
     {
         sCScript = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SCScript>();
-
     }
     public void SetBulletRotationDir(Vector3 forwardDir)
     {
-        speed = 15f;
+        speed = 25f;
         timeSpawn = 5f;
         rb = GetComponent<Rigidbody>();
         rb.velocity = forwardDir * speed;
