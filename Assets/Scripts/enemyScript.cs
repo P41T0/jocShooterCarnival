@@ -11,12 +11,21 @@ public class enemyScript : MonoBehaviour
     {
         
         animator = GetComponent<Animator>();
+        
+    }
+    public bool GetIsDead() { 
+        return isDead;
     }
 
     public void EnemyDead()
     {
-        isDead = true;
-        animator.SetBool("dead", true);
-        Destroy(gameObject, 2f);
+        if (!isDead)
+        {
+            isDead = true;
+            animator.SetBool("dead", true);
+            Destroy(gameObject, 4f);
+
+        }
+      
     }
 }
