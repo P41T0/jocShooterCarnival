@@ -9,14 +9,26 @@ public class SCScript : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private TMP_Text enemiesShooted;
     [SerializeField] private TMP_Text secondsRemainingText;
+    [SerializeField] private TMP_Text bestScoreText;
     private int numEnemsHit;
     private float secondsRemaining;
+    private int bestScore;
+
     void Start()
     {
         numEnemsHit = 0;
         enemiesShooted.text = numEnemsHit.ToString();
         secondsRemaining = 120.0f;
         secondsRemainingText.text = ConvertToMinutesAndSeconds(secondsRemaining);
+        if (PlayerPrefs.HasKey("BestScore"))
+        {
+            bestScore = PlayerPrefs.GetInt("BestScore");
+        }
+        else
+        {
+            bestScore = 0;
+        }
+        bestScoreText.text = bestScore.ToString();
     }
 
     // Update is called once per frame
@@ -29,6 +41,11 @@ public class SCScript : MonoBehaviour
         }
         else
         {
+            if (numEnemsHit > bestScore)
+            {
+                PlayerPrefs.SetInt("BestScore",numEnemsHit);
+            }
+
             SceneManager.LoadScene(0);
         }
 

@@ -35,8 +35,8 @@ public class IntroSCScript : MonoBehaviour
 
         }
         //Load Scene
-        string escena = "Demo 1";
-        SceneManager.LoadScene(escena);
+        
+        SceneManager.LoadScene("Demo");
 
     }
 

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5177188989903592972}
   m_Layer: 0
   m_Name: SM_Prop_Cart_01
-  m_TagString: Enemy
+  m_TagString: Cart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  rider: {fileID: 678998101282618922}
 --- !u!1 &5044654297918387375
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +528,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cbfb51c78f2cbb499f8b49f9d0eeff0, type: 3}
+--- !u!1 &678998101282618922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 869011402310034259, guid: 1cbfb51c78f2cbb499f8b49f9d0eeff0, type: 3}
+  m_PrefabInstance: {fileID: 388172035276758393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8646500067950794795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8258927067411793234, guid: 1cbfb51c78f2cbb499f8b49f9d0eeff0, type: 3}

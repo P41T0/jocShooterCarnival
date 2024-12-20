@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - SceneManager
   - BulletCanPass
+  - Cart
   layers:
   - Default
   - TransparentFX

@@ -43,5 +43,9 @@ public class BulletScript : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (collision.gameObject.CompareTag("Cart"))
+        {
+            collision.gameObject.GetComponent<TrainScript>().KillPassenger();
+        }
     } 
 }
