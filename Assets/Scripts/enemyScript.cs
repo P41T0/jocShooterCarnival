@@ -23,9 +23,14 @@ public class enemyScript : MonoBehaviour
         {
             isDead = true;
             animator.SetBool("dead", true);
+            Invoke("moveDeath", 1.3f);
             Destroy(gameObject, 4f);
+            print("mort");
 
         }
-      
+    }
+
+    public void moveDeath() {
+        transform.position -= new Vector3(0, 0.9f, 0);
     }
 }
