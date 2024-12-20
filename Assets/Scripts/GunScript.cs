@@ -38,7 +38,7 @@ public class GunScript : MonoBehaviour
             gunSource.Play();
             GameObject bulletInstantiated = Instantiate(bullet, BulletSpawner.transform.position, Quaternion.identity);
             delayTime = 0.4f;
-            bulletInstantiated.GetComponent<BulletScript>().SetBulletRotationDir(gameObject.transform.forward);
+            bulletInstantiated.GetComponent<BulletScript>().SetBulletRotationDir(gameObject.transform.forward, gameObject.transform.rotation);
         }
     }
 

@@ -14,12 +14,13 @@ public class BulletScript : MonoBehaviour
     {
         sCScript = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SCScript>();
     }
-    public void SetBulletRotationDir(Vector3 forwardDir)
+    public void SetBulletRotationDir(Vector3 forwardDir, Quaternion rotation)
     {
         speed = 25f;
         timeSpawn = 5f;
         rb = GetComponent<Rigidbody>();
         rb.velocity = forwardDir * speed;
+        gameObject.transform.rotation = rotation;
     }
     // Update is called once per frame
     void Update()
